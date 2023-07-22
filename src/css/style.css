@@ -1,0 +1,92 @@
+body{
+ /* background-image: url("./src/imagens/bg-desktop.jpg");*/
+  background-color: black;
+  color: white;
+  font-family: "Oxanium", cursive;
+}
+
+/* Pseudo elemento: cria um elemento HTML através do css  */
+body::before{ /* ANtes do body ele irá criar outro elemento */
+  content: "";
+  background-image: url(../imagens/bg-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; /* Cobrir todo o background com a imagem */
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute; /* Propriedade de posicionamento: vai ficar absolutamente posicionado */
+  z-index: -1; /* Profundidade da imagem(Obs: se ficar sem essa propriedade, a imagem vai ficar por cima de todo conteúdo do site, como se fosse uma camada) */
+  opacity: 0.2; /* Quanto mais eu diminuo, mais opaco fica */
+}
+
+.cabecalho{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Alinhar os elementos filhos sempre horizontalmente quando eu estiver usando o flex-direction: row */
+}
+
+.selecao-de-personagens{
+  display: flex;
+  align-items: center; /* Alinhar os elementos filhos sempre verticalmente */
+  gap: 30px; /* Espaçamento entre as seções */
+  min-height: calc(100vh - 152px); /* Altura mínima */ /* VH: Altura da tela do navegador(100% da altura da minha tela - 152px da altura do cabeçalho. COm isso, a altura do cabeçalho fica menor */
+  justify-content: center;/* Centralizar horizontalmente */
+}
+
+.selecao-de-personagens .lista-de-personagens{
+  display: flex;
+  flex-wrap: wrap; /* Quebrar pra baixo todos os elementos filhos quando não estiver mais espaço dentro do pai */
+  justify-content: center;
+  gap: 30px; /* Espaçamento entre os elementos filhos */
+}
+
+.selecao-de-personagens .personagens{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 585px; /* Definir uma largura máxima para a UL, com o intuito de os personagens não quebrarem de linha quando maximizar a tela */
+  gap: 25px;
+}
+
+.selecao-de-personagens .personagens .titulo{
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #47f4ff;
+  width: 100%; /* O titulo irá preencher o tamanho máximo de seu pai, que no caso é a section de classe .personagens */
+  text-align: center;
+}
+
+.lista-de-personagens .personagem img{
+  width: 100%; /* Isso aqui vai evitar que as imagens fiquem muito desfocadas ou muito quebradas */
+  height: 100%; /* Isso aqui vai evitar que as imagens fiquem muito desfocadas ou muito quebradas */
+}
+
+.lista-de-personagens .personagem.selecionado{
+  box-shadow: 0px 0px 24px 5px #0271f7;
+}
+
+.personagem-selecionado{
+  text-align: center;
+  max-height: 530px;/* Dar uma altura máxima para essa seção toda, pois caso seja inserido imagens maiores, não irá quebrar o estilo */
+}
+
+.personagem-selecionado .personagem-grande{
+  width: 430px; /* Setar uma largura para a imagem (tentar usar imagens mais quadradas)*/
+  height: 430px; /* Setar uma altura para a imagem */
+}
+
+.personagem-selecionado .informacoes-personagem .nome-personagem{
+  border-bottom: 2px solid #47f4ff;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.personagem-selecionado .informacoes-personagem .descricao-personagem{
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 20px;
+  width: 420px; 
+}
+

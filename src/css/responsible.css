@@ -1,0 +1,44 @@
+/* Quando chegar numa largura máxima de 1120px, vai começar a aplicar as regras que estão aqui dentro */
+@media (max-width: 1120px){
+  .cabecalho .logo{
+    max-width: 190px; /* Aplicando uma largura máxima de 190px pra logo */
+  }
+
+  .selecao-de-personagens{
+    flex-direction: column-reverse;
+    max-width: 430px; /* Largura máxima da MAIN Obs: Isso aqui é feito para dar uma padronizada na largura das seções, pois uma seção fica maior ou menor q a outra*/
+    margin: 0 auto; /* Para centralizar (Quando o elemento tem um width aplicado, não da pra usar a propriedade justify content)*/
+  }
+
+  .selecao-de-personagens .personagens {
+    margin-top: 37px;
+  }
+
+  /* Diminuindo tamanho do título 'Selecione um personagem' */
+  .selecao-de-personagens .personagens .titulo{
+    font-size: 15px;
+  }
+
+  /* Diminuindo tamanho entre as LIs */
+  .selecao-de-personagens .personagens .lista-de-personagens {
+    gap: 9px;
+  }
+
+  /* Diminuindo tamanho das imagens dos personagens */
+  .selecao-de-personagens .lista-de-personagens .personagem img{
+    width: 80px;
+  }
+
+  /* Diminuindo altura e largura do personagem grande */
+  .personagem-selecionado .personagem-grande{
+    width: 350px;
+    height: 350px;
+  }
+
+  /* Diminuindo tamanho do texto e fonte*/
+  .personagem-selecionado .descricao-personagem{
+    width: 80%;
+    font-size: 16px;
+    margin: 20px auto;
+  }
+}
